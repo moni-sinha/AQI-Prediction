@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<script src="https://cdn.tailwindcss.com/?plugins=aspect-ratio"></script>
+<script src="https://cdn.tailwindcss.com/?plugins=typography"></script>
+
+   <!--
+  This example requires Tailwind CSS v2.0+ 
+  
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/typography'),
+    ],
+  }
+  ```
+-->
+<div class="relative py-16 bg-white overflow-hidden">
+    <div class="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">
+      <div class="relative h-full text-lg" aria-hidden="true">
+        <svg class="absolute top-12 left-full transform translate-x-32" width="404" height="384" fill="none" viewBox="0 0 404 384">
+          <defs>
+            <pattern id="74b3fd99-0a6f-4271-bef2-e80eeafdf357" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+              <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+            </pattern>
+          </defs>
+          <rect width="404" height="384" fill="url(#74b3fd99-0a6f-4271-bef2-e80eeafdf357)" />
+        </svg>
+        <svg class="absolute top-1/2 right-full transform -translate-y-1/2 -translate-x-32" width="404" height="384" fill="none" viewBox="0 0 404 384">
+          <defs>
+            <pattern id="f210dbf6-a58d-4871-961e-36d5016a0f49" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+              <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+            </pattern>
+          </defs>
+          <rect width="404" height="384" fill="url(#f210dbf6-a58d-4871-961e-36d5016a0f49)" />
+        </svg>
+        <svg class="absolute bottom-12 left-full transform translate-x-32" width="404" height="384" fill="none" viewBox="0 0 404 384">
+          <defs>
+            <pattern id="d3eb07ae-5182-43e6-857d-35c643af9034" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+              <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+            </pattern>
+          </defs>
+          <rect width="404" height="384" fill="url(#d3eb07ae-5182-43e6-857d-35c643af9034)" />
+        </svg>
+      </div>
+    </div>
+    <div class="relative px-4 sm:px-6 lg:px-8">
+      <div class="text-lg mx-auto">
+        <h1>
+          
+          <span class="mt-1 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">How does the AQI work?</span>
+        </h1>
+        <p class="mt-8 text-xl text-gray-500 leading-8">Think of the AQI as a yardstick that runs from 0 to 500. The higher the AQI value, the greater the level of air pollution and the greater the health concern. For example, an AQI value of 50 or below represents good air quality, while an AQI value over 300 represents hazardous air quality.<br><br>
+
+          For each pollutant an AQI value of 100 generally corresponds to an ambient air concentration that equals the level of the short-term national ambient air quality standard for protection of public health. AQI values at or below 100 are generally thought of as satisfactory. When AQI values are above 100, air quality is unhealthy: at first for certain sensitive groups of people, then for everyone as AQI values get higher.<br><br>
+          
+          The AQI is divided into six categories. Each category corresponds to a different level of health concern. Each category also has a specific color. The color makes it easy for people to quickly determine whether air quality is reaching unhealthy levels in their communities.
+
+        </p>
+        <h3>
+
+          <img src="https://w.ndtvimg.com/sites/3/2019/12/18122812/air_pollution_standards_cpcb.png"  
+          style="  display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 50%; margin-top: 1em; margin-bottom: 1em" >
+        <span class="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">Five major pollutants</span>
+        <ul>
+          <li class="mt-8 text-xl text-gray-500 leading-8">1. Ground-level ozone</li>
+          <li class="mt-8 text-xl text-gray-500 leading-8">2. Particle pollution (also known as particulate matter, including PM2.5 and PM10)</li>
+          <li class="mt-8 text-xl text-gray-500 leading-8">3. Carbon monoxide</li>
+          <li class="mt-8 text-xl text-gray-500 leading-8">4. Sulfur dioxide</li>
+          <li class="mt-8 text-xl text-gray-500 leading-8">5. Nitrogen dioxide</li>
+        </ul>
+        </h3>
+      </div>
+
+      <ul role="list" class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-3 xl:gap-x-8 mt-24">
+        <li class="relative">
+          <div class="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
+            <img src="https://assets.nrdc.org/sites/default/files/styles/full_content--retina/public/media-uploads/health4_26_airpollguide_istock_2796602_2400.jpg?itok=n2tBYa7S" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+            <button type="button" class="absolute inset-0 focus:outline-none">
+            </button>
+          </div>
+          
+        </li>
+
+        <li class="relative">
+            <div class="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
+              <img src="https://cdn.britannica.com/76/155676-050-40CF909F/Air-pollution-vehicle-tailpipes-number-criteria-pollutants.jpg" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+              <button type="button" class="absolute inset-0 focus:outline-none">
+              </button>
+            </div>
+            
+          </li>
+
+          <li class="relative">
+            <div class="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1M0Sh0BCkSO3GUUf1fvrmHuhRNNe2Kf-uPw&usqp=CAU" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+              <button type="button" class="absolute inset-0 focus:outline-none">
+              </button>
+            </div>
+            
+          </li>
+      
+      </ul>
+    </div>
+  </div>
+  
+
+ 
+  
+{% endblock %}

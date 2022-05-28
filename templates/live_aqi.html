@@ -1,0 +1,319 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Air Pollution Indicator</title>
+	<!-- <link rel="stylesheet" href="./style.css" /> -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&family=Montserrat:wght@700&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="root">
+		<h1 class="heading">Air Pollution Indicator</h1>
+		<hr>
+		<div class="location-container">
+			<h2 class="sub-heading" style="color:orange">Your Location :</h2>
+			<label for="error-msg" style="color: red;"></label><br />
+
+			<span style="margin-left:5em">Latitude</span>
+			<input
+				type="number"
+				name="lat"
+				placeholder="Latitude"
+				id="latitude"
+				step="0.0001"
+				class="loc-input" 
+				style="color:black;"
+				
+				/>
+			
+			<span style="margin-left:5em">Longitude</span>
+			<input
+				type="number"
+				name="lon"
+				placeholder="Longitude"
+				id="longitude"
+				step="0.0001"
+				class="loc-input"
+				style="color:black;"
+				/>
+			<button class="search-btn" style="margin-left:5em">Search</button>
+			
+		</div>
+		<hr>
+		<div class="air-info">
+			<h2 class="sub-heading" style="color:orange">Air Quality Index :</h2>
+			<span class="air-quality" style="font-size:30px">...</span>
+			<span class="arr" style="font-size:30px">&nbsp;&rarr;&nbsp;</span>
+			<span class="air-quality-status" style="font-size:30px">...</span>
+			<br>
+			<hr>
+			<div class="component-container">
+				<h2 class="sub-heading" style="color:orange">
+					Concentration of pollutants in air :
+				</h2>
+
+				<div>
+					<h3 class="component-names" style="color: black">Carbon Monoxide :</h3>
+					<span class="component-val" data-comp="co"></span>
+				</div>
+				<div>
+					<h3 class="component-names" style="color: black">Nitrogen Monoxide :</h3>
+					<span class="component-val" data-comp="no"></span>
+				</div>
+				<div>
+					<h3 class="component-names" style="color: black">Nitrogen Dioxide :</h3>
+					<span class="component-val" data-comp="no2"></span>
+				</div>
+				<div>
+					<h3 class="component-names" style="color: black">Ozone :</h3>
+					<span class="component-val" data-comp="o3"></span>
+				</div>
+				<div>
+					<h3 class="component-names" style="color: black">Sulphur Dioxide :</h3>
+					<span class="component-val" data-comp="so2"></span>
+				</div>
+				<div>
+					<h3 class="component-names" style="color: black">Fine particles matter :</h3>
+					<span class="component-val" data-comp="pm2_5"></span>
+				</div>
+				<div>
+					<h3 class="component-names" style="color: black">Coarse particulate matter :</h3>
+					<span class="component-val" data-comp="pm10"></span>
+				</div>
+				<div>
+					<h3 class="component-names" style="color: black">Ammonia :</h3>
+					<span class="component-val" data-comp="nh3"></span>
+				</div>
+				<!--  micrograms per cubic meter of air (μg/m3)  -->
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="column1">
+			  <img src="https://i.pinimg.com/originals/be/88/b7/be88b7618dcf098f8f35b44011750401.jpg" style="width:100%">
+			</div>
+			<div class="column2">
+			  <img src="https://balconygardenweb-lhnfx0beomqvnhspx.netdna-ssl.com/wp-content/uploads/2016/05/rich-soil.jpg" style="width:100%">
+			</div>
+		</div>
+	
+		<footer style="color:black">
+			Plant more 
+		</footer>
+		</div>
+
+	<style>
+		* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.column1 {
+	float: left;
+	padding: 5px;
+	margin-left: 4em;
+	margin-right: 3.5em;
+	width: 33%;
+  }
+
+  .column2 {
+	float: left;
+	padding: 5px;
+	width: 52.55%;
+  }
+  
+  /* Clear floats after image containers */
+  .row::after {
+	content: "";
+	clear: both;
+	display: table;
+  }
+
+.root {
+	padding: 2vw;
+	background-image: linear-gradient(to right bottom, #213764, #295089, #2c6caf, #2688d7, #00a7ff);
+	width: 100%;
+	height: 100%;
+	color: white;
+	font-family: poppins;
+	min-height: 100vh;
+}
+
+.heading {
+	text-align: center;
+	font-family: 'Fira Code', monospace;
+	font-size: 3rem;
+	margin-bottom: 60px;
+}
+
+.sub-heading {
+	margin: 20px 0;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 2rem;
+}
+
+.location-container {
+	margin: 40px 0;
+}
+
+.loc-input {
+	border: 3px solid #269fe6;
+	font-size: 1rem;
+	padding: 8px;
+	border-radius: 6px;
+	margin: 10px;
+	width: 270px;
+}
+
+.loc-input:invalid {
+	border: 3px solid #d34545;
+}
+
+.search-btn {
+	padding: 10px 14px;
+	background-color: #269fe6;
+	border: none;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 700;
+	font-size: 1rem;
+	border-radius: 4px;
+	color: #fff;
+	margin: 10px;
+	cursor: pointer;
+}
+
+.air-quality, .arr, .air-quality-status {
+	font-size: 4rem;
+	font-weight: 700;
+}
+
+.component-names {
+	display: inline-block;
+}
+
+.component-container div {
+	margin: 10px 0;
+}
+
+.component-val {
+	font-size: 1.2rem;
+	margin-left: 20px;
+}
+
+footer {
+	margin-top: 40px;
+	text-align: center;
+}
+	</style>
+	<!-- <script src="./script.js" defer></script>
+	 -->
+	 <script>
+		 const errorLabel = document.querySelector("label[for='error-msg']")
+const latInp = document.querySelector("#latitude")
+const lonInp = document.querySelector("#longitude")
+const airQuality = document.querySelector(".air-quality")
+const airQualityStat = document.querySelector(".air-quality-status")
+const srchBtn = document.querySelector(".search-btn")
+const componentsEle = document.querySelectorAll(".component-val")
+
+const appId = "3e750e72fd087549da7c12e2c8027afd" // Get your own API Key from https://home.openweathermap.org/api_keys
+const link = "https://api.openweathermap.org/data/2.5/air_pollution"	// API end point
+
+const getUserLocation = () => {
+	// Get user Location
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(onPositionGathered, onPositionGatherError)
+	} else {
+		onPositionGatherError({ message: "Can't Access your location. Please enter your co-ordinates" })
+	}
+}
+
+const onPositionGathered = (pos) => {
+	let lat = pos.coords.latitude.toFixed(4), lon = pos.coords.longitude.toFixed(4)
+
+	// Set values of Input for user to know
+	latInp.value = lat
+	lonInp.value = lon
+
+	// Get Air data from weather API
+	getAirQuality(lat, lon)
+}
+
+const getAirQuality = async (lat, lon) => {
+	// Get data from api
+	const rawData = await fetch(`${link}?lat=${lat}&lon=${lon}&appid=${appId}`).catch(err => {
+		onPositionGatherError({ message: "Something went wrong. Check your internet connection." })
+		console.log(err)
+	})
+	const airData = await rawData.json()
+	setValuesOfAir(airData)
+	setComponentsOfAir(airData)
+}
+
+const setValuesOfAir = airData => {
+	const aqi = airData.list[0].main.aqi
+	let airStat = "", color = ""
+
+	// Set Air Quality Index
+	airQuality.innerText = aqi
+
+	// Set status of air quality
+
+	switch (aqi) {
+			case 1:
+				airStat = "Good"
+				color = "rgb(19, 201, 28)"
+				break
+			case 2:
+				airStat = "Fair"
+				color = "rgb(15, 134, 25)"
+				break
+			case 3:
+				airStat = "Moderate"
+				color = "rgb(201, 204, 13)"
+				break
+			case 4:
+				airStat = "Poor"
+				color = "rgb(204, 83, 13)"
+				break
+			case 5:
+				airStat = "Very poor"
+				color = "rgb(201, 204, 13)"
+				break
+			default:
+				airStat = "Unknown"
+	}
+
+	airQualityStat.innerText = airStat
+	airQualityStat.style.color = color
+}
+
+const setComponentsOfAir = airData => {
+	let components = {...airData.list[0].components}
+	componentsEle.forEach(ele => {
+		const attr = ele.getAttribute('data-comp')
+		ele.innerText = components[attr] += " μg/m³"
+	})
+}
+
+const onPositionGatherError = e => {
+	errorLabel.innerText = e.message
+}
+
+srchBtn.addEventListener("click", () => {
+	getAirQuality(parseFloat(latInp.value).toFixed(4), parseFloat(lonInp.value).toFixed(4))
+})
+
+getUserLocation()
+	 </script>
+
+
+
+{% endblock %}

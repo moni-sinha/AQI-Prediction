@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="flex justify-center items-center h-screen">
+    <h1 class="text-4xl tracking-tight mb-24 font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+        <span class="block xl:inline">AQI Predicted By Our Model = </span>
+        <span class="block text-indigo-600 xl:inline">{{result}}</span>
+      </h1>
+  </div>
+
+    <!-- {% if chart %}
+        <img src="data:image/png;base64, {{figure|safe}}">
+    {% endif %} -->
+{% endblock %}

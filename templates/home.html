@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="text-center mt-8">
+    <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+        <span class="block xl:inline">Get Your AQI</span>
+      </h1>
+  </div>
+
+  <!-- <section style="background-image: url('cloud.jpg')"> -->
+    <section class="bg-gray-50">
+        <div class="bg-white px-4 py-5 sm:rounded-lg sm:p-6">
+            <div class="flex justify-center">
+              <div class="mt-5 md:mt-0 w-full px-24">
+                <form action="add" method="POST">
+                    {% csrf_token %}
+                  <div class="grid grid-cols-6 gap-6 mb-8">
+                    <div class="col-span-6 sm:col-span-3">
+                      <label for="first-name" class="block text-sm font-medium text-gray-700">PM2.5</label>
+                      <input type="text" name="a" id="first-name" autocomplete="given-name" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-3 px-2">
+                    </div>
+        
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="first-name" class="block text-sm font-medium text-gray-700">NO</label>
+                        <input type="text" name="b" id="first-name" autocomplete="given-name" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-3 px-2">
+                      </div>
+                  </div>
+
+
+                  <div class="grid grid-cols-6 gap-6 mb-8">
+                    <div class="col-span-6 sm:col-span-3">
+                      <label for="first-name" class="block text-sm font-medium text-gray-700">NO2</label>
+                      <input type="text" name="c" id="first-name" autocomplete="given-name" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-3 px-2">
+                    </div>
+        
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="first-name" class="block text-sm font-medium text-gray-700">NOx</label>
+                        <input type="text" name="d" id="first-name" autocomplete="given-name" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-3 px-2">
+                      </div>
+                  </div>
+
+
+                  <div class="grid grid-cols-6 gap-6 mb-8">
+                    <div class="col-span-6 sm:col-span-3">
+                      <label for="first-name" class="block text-sm font-medium text-gray-700">NH3</label>
+                      <input type="text" name="e" id="first-name" autocomplete="given-name" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-3 px-2">
+                    </div>
+        
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="first-name" class="block text-sm font-medium text-gray-700">CO</label>
+                        <input type="text" name="f" id="first-name" autocomplete="given-name" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-3 px-2">
+                      </div>
+                  </div>
+
+
+                  <div class="grid grid-cols-6 gap-6 mb-8">
+                    <div class="col-span-6 sm:col-span-3">
+                      <label for="first-name" class="block text-sm font-medium text-gray-700">SO2</label>
+                      <input type="text" name="g" id="first-name" autocomplete="given-name" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-3 px-2">
+                    </div>
+        
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="first-name" class="block text-sm font-medium text-gray-700">O3</label>
+                        <input type="text" name="h" id="first-name" autocomplete="given-name" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-3 px-2">
+                      </div>
+                  </div>
+
+                  <div class="grid grid-cols-6 gap-6 mb-8">
+                    <div class="col-span-6 sm:col-span-3">
+                      <label for="first-name" class="block text-sm font-medium text-gray-700">Benzene</label>
+                      <input type="text" name="i" id="first-name" autocomplete="given-name" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-3 px-2">
+                    </div>
+        
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="first-name" class="block text-sm font-medium text-gray-700">Toluene</label>
+                        <input type="text" name="j" id="first-name" autocomplete="given-name" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-3 px-2">
+                      </div>
+                  </div>
+
+                    <button type="submit" class="inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 w-full mt-8">Calculate AQI</button>
+                  
+                </form>
+              </div>
+            </div>
+          </div>
+  </section>
+  
+
+{% endblock %}

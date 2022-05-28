@@ -1,0 +1,1 @@
+web gunicorn salespred.wsgi:application --log-file -
